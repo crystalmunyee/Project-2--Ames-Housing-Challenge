@@ -19,12 +19,14 @@ These are the models that we have tested to understand the correlation on the Am
 | pipe2_ridge      | RIDGE       | 11.50         | 0.8776            | 0.8633          | 0.1538 | 14 features+ skewness correction. Combined features give better R2 score for train and test. RMSE is also lower in the reduced feature ridge model. |
 
 **Problem Statement**
+
 - We are real estate agents which are using the Ames housing data to create a regression model that predicts the price of houses in Ames, IA. 
 - Understanding what features have strong correlation to houses prices in Ames.
 - Update housing estate investors and potential homeowners in Ames.
 - Build machine learning models to describe the local housing market and to use these models to predict house prices in that market
 
 **Data Cleaning and EDA**
+
 - In this portion we found a number of null data for certain features in the train data set.
     *PoolQC,Misc Feature and Alley has more than 50% data missing. We decide to drop these features to prevent incorrect impute on the data.
 -In the next step we realize that some of the features can be categorized under the same characteristics.
@@ -44,21 +46,24 @@ These are the models that we have tested to understand the correlation on the Am
 -For every 1k SF increase in Gr living area, we expect $160,921 increase in sale price!
 
 **Preprocessing and Modeling**
+
 - For the Nominal and discrete categorical variables, it will be one-hot encoded.
 - For the Ordinal data with different scales, we will map and encode them on a fixed 1 to 5 scale.
 - We have identified top features with linear relationships to the salesprice previously using the heatmap and individual EDA plots.
 - The data been scaled using standard scalar before running the regression analysis to prevent uniform data values from impacting the final result.
 - We then proceed to do a train test split to validate the accuracy of the train model.
-- Utilize feature selection such as lasso, ridge, elantic net and the pearson coefficient we are able to identify and remove noisy features. 
+- Some feature selection used such as lasso, ridge, elantic net and the pearson coefficient are able to identify and remove noisy features. 
 - We tested and evaluated a variety of models such as linear regression, lasso, ridge,elastic net to identify a production algorithm that has better R2 score and lower RMSE.
-- Does the student defend their choice of production model relevant to the data at hand and the problem?
 - The model that we selected is the ridge regularization due to better overall R2 score for train and test and lower RMSE. We also did an alpha test run to find the most optimum alpha value.
 - Some multi-collinear features were also identified and combined to form 1 feature to further improve the model. In the end we concluded that ridge regression with reduced features gives the best score and RMSE.
+- Skewed features were also normalized using logarithm which helps improve the score.
 
 **Evaluation and Conceptual Understanding**
+
 - The data we got from the train/test ridge score with combined features gives us confidence that it will be able to predict the test split sales price with lower overfitting and higher accuracy compared to linear regression.
 
 **Conclusion and Recommendations**
+
 In conclusion, from the models that we have tested it shows ridge and lasso to have the best r2 score and lower RMSE. But in this context we will use ridge to build the model. The features with the highest ridge coefficient tells us that area, quality and built year has the most influence on the sales price in Ames Iowa housing. We use this knowledge that we learn to predict the salesprice for the test set which helps us as real estate agents to position ourselfs in a more market competitive edge to recommend to clients on suitable housings. 
 
 The recommendations we have for buyers that wish to upscale their property to fetch better pricing is to buy houses with bigger living area and renovate it with better quality finishings and a fireplace to get better investment returns.
