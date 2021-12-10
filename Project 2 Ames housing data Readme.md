@@ -13,10 +13,10 @@ These are the models that we have tested to understand the correlation on the Am
 | Model            | Penalty     | Value of a | Training Acuracy | Testing Acuracy | RMSE   | Interpretation/Conclusion                                                                                                                           |
 |:------------------|:-------------|:------------:|:------------------|:-----------------|:--------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | linear regession | NA          | NA         | -1696222         | -1600552        | 0.1561 | 15 features. train and test score is negative which is a poor fit to the model.                                                                     |
-| pipe1_ridge      | RIDGE       | 16.30      | 0.8750           | 0.8594          | 0.1559 | 15 features. train and test score better than linear reg, RMSE on the lower side which is better as well.                                           |
+| pipe1_ridge      | RIDGE       | 18.31      | 0.8750           | 0.8594          | 0.1559 | 15 features. train and test score better than linear reg, RMSE on the lower side which is better as well.                                           |
 | pipe1_lasso      | LASSO       | 0.01       | 0.8722           | 0.8543          | 0.1587 | 15 features. train and test score slightly lower than ridge. RMSE also higher than ridge. Ridge has better fit and accuracy.                        |
 | pipe1_elasticnet | ELASTIC NET | 0.5        | 0.8310           | 0.8102          | 0.1811 | 15 features. train and test score lower than both ridge and lasso. RMSE also higher than ridge and lasso. Ridge has better fit and accuracy.        |
-| pipe2_ridge      | RIDGE       | NA         | 0.8776            | 0.8633          | 0.1538 | 14 features+ skewness correction. Combined features give better R2 score for train and test. RMSE is also lower in the reduced feature ridge model. |
+| pipe2_ridge      | RIDGE       | 11.50         | 0.8776            | 0.8633          | 0.1538 | 14 features+ skewness correction. Combined features give better R2 score for train and test. RMSE is also lower in the reduced feature ridge model. |
 
 **Problem Statement**
 - We are real estate agents which are using the Ames housing data to create a regression model that predicts the price of houses in Ames, IA. 
