@@ -29,25 +29,23 @@ These are the models that we have tested to understand the correlation on the Am
 
 - In this portion we found a number of null data for certain features in the train data set.
     * PoolQC,Misc Feature and Alley has more than 50% data missing. We decide to drop these features to prevent incorrect impute on the data.
--In the next step we realize that some of the features can be categorized under the same characteristics.
+- In the next step we realize that some of the features can be categorized under the same characteristics.
     * Number of rooms, Area, Quality and Misc.
-
--Looking into each data by similar characteristics such as garage set: 
+- Looking into each data by similar characteristics such as garage set: 
 ('Garage Type', 'Garage Yr Blt','Garage Finish', 'Garage Cars', 'Garage Area', 'Garage Qual','Garage Cond')
-
--We can see that some input is not standardized. So we imputed 0 to the garage cars and area for those that do not have a garage.
--Similary for the basement set, we imputed unfinished for bsmt finish type 2 for the row that clearly shows there is unfinished SF.
--We also imputed all the bsmt sf related features to 0 for those that have no garage because its Na for all the bsmt conditions and total bsmt sf.
--For fireplace quality we will leave the NaN as it is since it represents no fireplace.
+- We can see that some input is not standardized. So we imputed 0 to the garage cars and area for those that do not have a garage.
+- Similary for the basement set, we imputed unfinished for bsmt finish type 2 for the row that clearly shows there is unfinished SF.
+- We also imputed all the bsmt sf related features to 0 for those that have no garage because its Na for all the bsmt conditions and total bsmt sf.
+- For fireplace quality we will leave the NaN as it is since it represents no fireplace.
 - The distribution on the sales price shows that its skewed to the right. To prevent bias on the data, we will use the logarithm of the sales price to give it a normal distribution.
 - Outliers identified in this project includes the garage year built which is in year 2207 (not possible). This will be imputed with reference to year built since we see a positive propertional relationship in the line plot.
--Besides this, outliers from gr living area above 4000 gives does not add value to the mode. Thus, we dropped these values from the dataset.
+- Besides this, outliers from gr living area above 4000 gives does not add value to the mode. Thus, we dropped these values from the dataset.
 - For the summary statistics for train/test data,overall mean and std is quite high for some features such as lot area which is why we need to use standard scalar later on to ensure all the features are on a uniform scale.
--Salesprice std or variation lower since its converted to log sales price.
--Based on the heatmap for all the features, we can identify the features with highest pearson coefficient to be impacting salesprice the most.
--Factors with positive influence on salesprice are identified with the ridge coefficient:('Exter Qual','Gr Liv Area','Kitchen Qual','Overall Qual','Garage Area','Garage Cars','Total Bsmt SF','1st Flr SF','Bsmt Qual','Year Built','Year Remod/Add','Fireplace Qu','Full Bath','Garage Yr Blt','Foundation_PConc','SalePrice')
--Plotting each of these features with a line plot or boxplot shows a clear correlation to salesprice. 
--For every 1k SF increase in Gr living area, we expect $160,921 increase in sale price!
+- Salesprice std or variation lower since its converted to log sales price.
+- Based on the heatmap for all the features, we can identify the features with highest pearson coefficient to be impacting salesprice the most.
+- Factors with positive influence on salesprice are identified with the ridge coefficient:('Exter Qual','Gr Liv Area','Kitchen Qual','Overall Qual','Garage Area','Garage Cars','Total Bsmt SF','1st Flr SF','Bsmt Qual','Year Built','Year Remod/Add','Fireplace Qu','Full Bath','Garage Yr Blt','Foundation_PConc','SalePrice')
+- Plotting each of these features with a line plot or boxplot shows a clear correlation to salesprice. 
+- For every 1k SF increase in Gr living area, we expect $160,921 increase in sale price!
 
 **Preprocessing and Modeling**
 
