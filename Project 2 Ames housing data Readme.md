@@ -31,7 +31,8 @@ These are the models that we have tested to understand the correlation on the Am
     *PoolQC,Misc Feature and Alley has more than 50% data missing. We decide to drop these features to prevent incorrect impute on the data.
 -In the next step we realize that some of the features can be categorized under the same characteristics.
     *Number of rooms, Area, Quality and Misc.
--Looking into each data by similar characteristics such as garage set ('Garage Type', 'Garage Yr Blt','Garage Finish', 'Garage Cars', 'Garage Area', 'Garage Qual','Garage Cond'),we can see that some input is not standardized. So we imputed 0 to the garage cars and area for those that do not have a garage.
+-Looking into each data by similar characteristics such as garage set:('Garage Type', 'Garage Yr Blt','Garage Finish', 'Garage Cars', 'Garage Area', 'Garage Qual','Garage Cond')
+-We can see that some input is not standardized. So we imputed 0 to the garage cars and area for those that do not have a garage.
 -Similary for the basement set, we imputed unfinished for bsmt finish type 2 for the row that clearly shows there is unfinished SF.
 -We also imputed all the bsmt sf related features to 0 for those that have no garage because its Na for all the bsmt conditions and total bsmt sf.
 -For fireplace quality we will leave the NaN as it is since it represents no fireplace.
