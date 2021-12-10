@@ -3,7 +3,7 @@
 
 **Kaggle Submission Score**
 [DSI-US-11 Regression Challenge](https://www.kaggle.com/c/dsi-us-11-project-2-regression-challenge) score is provided as per below,
-![Kaggle score](https://git.generalassemb.ly/crystalmunyee/my_materials/blob/master/project_2/kaggle%20submission%20score.JPG)
+![Kaggle score](https://github.com/crystalmunyee/Project_2_Ames_Housing_Challenge/blob/main/kaggle%20challenge%20submission%20score.JPG)
 
 
 **Executive summary**
@@ -66,6 +66,7 @@ The recommendations we have for buyers that wish to upscale their property to fe
 
 
 **References**
+
 *https://nycdatascience.com/blog/student-works/house-price-prediction-in-ames-iowa/
 *http://jse.amstat.org/v19n3/decock/DataDocumentation.txt
 
